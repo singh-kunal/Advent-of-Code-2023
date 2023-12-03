@@ -10,7 +10,6 @@ import (
 )
 
 func main() {
-	ref := map[string]string{"red": "red", "blue": "blue", "green": "green"}
 
 	file, err := os.Open("./day2/input.txt")
 	if err != nil {
@@ -27,20 +26,20 @@ func main() {
 		red, green, blue := 0, 0, 0
 
 		for i := 0; i < len(match); i++ {
-			if ref[match[i]] == "red" {
+			if match[i] == "red" {
 				tmp, _ := strconv.Atoi(match[i-1])
 				if tmp > red {
 					red = tmp
 				}
 			}
-			if ref[match[i]] == "green" {
+			if match[i] == "green" {
 				tmp, _ := strconv.Atoi(match[i-1])
 
 				if tmp > green {
 					green = tmp
 				}
 			}
-			if ref[match[i]] == "blue" {
+			if match[i] == "blue" {
 				tmp, _ := strconv.Atoi(match[i-1])
 
 				if tmp > blue {

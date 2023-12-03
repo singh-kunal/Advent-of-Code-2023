@@ -10,7 +10,6 @@ import (
 )
 
 func main() {
-	ref := map[string]string{"red": "red", "blue": "blue", "green": "green"}
 
 	file, err := os.Open("./day2/input.txt")
 	if err != nil {
@@ -27,21 +26,21 @@ func main() {
 		gameno += temp
 
 		for i := 0; i < len(match); i++ {
-			if ref[match[i]] == "red" {
+			if match[i] == "red" {
 				tmp, _ := strconv.Atoi(match[i-1])
 				if tmp > 12 {
 					gameno -= temp
 					break
 				}
 			}
-			if ref[match[i]] == "green" {
+			if match[i] == "green" {
 				tmp, _ := strconv.Atoi(match[i-1])
 				if tmp > 13 {
 					gameno -= temp
 					break
 				}
 			}
-			if ref[match[i]] == "blue" {
+			if match[i] == "blue" {
 				tmp, _ := strconv.Atoi(match[i-1])
 				if tmp > 14 {
 					gameno -= temp
